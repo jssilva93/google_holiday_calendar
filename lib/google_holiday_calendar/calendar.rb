@@ -22,7 +22,7 @@ module GoogleHolidayCalendar
     def holidays(start_date: nil, end_date: nil, limit: 10)
       start_date = Date.today unless start_date
       end_date = to_date(start_date) + 1.month unless end_date
-
+      byebug
       calendar_id = "#{@lang}.#{@country}#holiday@group.v.calendar.google.com"
       url = "https://www.googleapis.com/calendar/v3/calendars/#{CGI.escape(calendar_id)}/events?"
       params = {
