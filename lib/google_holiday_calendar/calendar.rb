@@ -52,6 +52,7 @@ module GoogleHolidayCalendar
     # @param arg [#to_date, String] {Date}, {Time}, or date like String (ex. "YYYY-MM-DD")
     def holiday?(arg)
       date = to_date(arg)
+      byebug
       holidays(start_date: date, end_date: date + 1.day, limit: 1).length > 0
     end
 
